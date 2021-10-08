@@ -39,3 +39,21 @@ Running
 ```
 docker run -p 8080:8080 -e SPRING_PROFILES_ACTIVE='prod' -e FORUM_DATABASE_URL='jdbc:h2:mem:alura-forum' -e FORUM_DATABASE_USERNAME='sa' -e FORUM_DATABASE_PASSWORD='' -e FORUM_JWT_SECRET='123456' alura/forum
 ```
+
+
+# How-to run with Heroku
+
+Building the image
+
+```
+heroku login
+heroku container:login
+heroku create thadeu-forum
+heroku git:remote -a alura-forum
+heroku container:push web
+heroku container:release web
+heroku open
+```
+
+Logs
+heroku logs --tail
