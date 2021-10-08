@@ -49,7 +49,7 @@ Building the image
 heroku login
 heroku container:login
 heroku create thadeu-forum
-heroku git:remote -a alura-forum
+heroku git:remote -a thadeu-forum
 heroku container:push web
 heroku container:release web
 heroku open
